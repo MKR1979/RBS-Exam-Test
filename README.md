@@ -17,8 +17,8 @@ React RBS test Application in that:
 For data resources, please visit:
 > Remote data location: https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json)
 
-Git location:
-> [](https://github.com/MKR1979/RBSTest/)
+Github location:
+> Source code [https://github.com/MKR1979/RBS-Exam-Test/] (https://github.com/MKR1979/RBS-Exam-Test/)
 
 
 

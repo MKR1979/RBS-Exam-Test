@@ -1,7 +1,7 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 import PokemonDataService from "../services/pokemon.service";
-import Evolutions from './show-evolutions-component';
-import Pagination from './pagination-component';
+import Evolutions from './show-evolutions.component';
+import Pagination from './pagination.component';
 
 export default class PokemonList extends Component {
   //const PokemonList = () => {

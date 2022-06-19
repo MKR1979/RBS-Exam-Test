@@ -3,7 +3,6 @@ import { Switch, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import PokemonList from "./components/pokemons-list.component";
-import Evolutions from "./components/show-evolutions-component";
 
 class App extends Component {
   render() {
@@ -18,18 +17,13 @@ class App extends Component {
               <Link to={"/pokemons"} className="nav-link">
               Pokemons
               </Link>
-            </li>
-            <li className="nav-item">
-              <Link to={"/evolutions"} className="nav-link">
-                Help
-              </Link>
-            </li>
+            </li> 
           </div>
         </nav>
         <div className="container mt-3">
           <Switch>
             <Route exact path={["/", "/pokemons"]} component={PokemonList} />          
-            <Route exact path="/evolutions" component={Evolutions}  />          
+                     
           </Switch>
         </div>
       </div>
