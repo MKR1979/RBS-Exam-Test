@@ -3,6 +3,7 @@ import PokemonDataService from "../services/pokemon.service";
 import Evolutions from './show-evolutions.component';
 import Pagination from './pagination.component';
 
+
 export default class PokemonList extends Component {
   //const PokemonList = () => {
   constructor(props) {
@@ -119,7 +120,7 @@ export default class PokemonList extends Component {
                 <div className="col-md-1">
                     <label>
                         <strong>Search: </strong>
-                    </label>{" "}
+                    </label>{""}
                 </div>
                 <div className="input-group mb-4 col-md-11">
                   <input
@@ -133,31 +134,43 @@ export default class PokemonList extends Component {
                 </div>
             </div>
             <div className="col-md-12">
-                <table className="table">
-                    <tr>                      
-                      <th className="col-md-2" onClick={() => this.sortList('num',this.state.pokemons)} >Num {this.getArrow(this.state.directionNum)}</th>
-                      <th className="col-md-3" onClick={() => this.sortList('name',this.state.pokemons)}>Name {this.getArrow(this.state.directionName)}</th>
-                      <th className="col-md-3">Type</th>
-                      <th className="col-md-4">Image</th>
-                    </tr>
+                <table className="table table-hover">
+                  <thead>                    
+                      <tr>                      
+                        <th className="col-md-2" onClick={() => this.sortList('num',this.state.pokemons)} >Num {this.getArrow(this.state.directionNum)}</th>
+                        <th className="col-md-3" onClick={() => this.sortList('name',this.state.pokemons)}>Name {this.getArrow(this.state.directionName)}</th>
+                        <th className="col-md-3">Type</th>
+                        <th className="col-md-4">Image</th>
+                      </tr>
+                    </thead>
+                    <tbody>
                     {filterPokemons.map((val, key) => {
                         let types="";
                         for(let i=0;i<val.type.length;i++)
                         {types=i===0?val.type[i]:types+", " +val.type[i]}
                       return (
-                    <tr key={key}  onClick={e=> this.handleRowClick(e,val.num)}> 
-                        <td className="col-md-2">{val.num}</td>
-                        <td className="col-md-3">{val.name}</td>                       
-                        <td className="col-md-3">{types}</td>                         
-                        <td className="col-md-4"><img src={val.img} alt="" /> </td>                         
-                    </tr>                                
+                    
+                      <tr key={key}  onClick={e=> this.handleRowClick(e,val.num)}> 
+                          <td className="col-md-2">{val.num}</td>
+                          <td className="col-md-3">{val.name}</td>                       
+                          <td className="col-md-3">{types}</td>                         
+                          <td className="col-md-4"><img src={val.img} alt="" /> </td>                         
+                      </tr> 
+                                                                  
                     )          
                   })}
-                  <pagination></pagination> 
+                  </tbody>    
+                  <tfoot>
+                    <tr>
+                      <td colspan="4">
+                      <Pagination/> 
+                      </td>
+                    </tr>                  
+                  </tfoot>                     
                 </table>               
             </div>
-            <div><Pagination/>
-            </div> 
+            {/* <div><Pagination/>
+            </div>  */}
             <Evolutions
                     show={this.state.visible}
                     onHide={evolutionsClose}
