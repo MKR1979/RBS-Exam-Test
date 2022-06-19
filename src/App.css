@@ -1,0 +1,43 @@
+.list {
+  text-align: left;
+  max-width: 750px;
+  margin: auto;
+}
+
+.submit-form {
+  max-width: 300px;
+  margin: auto;
+}
+
+.edit-form {
+  max-width: 300px;
+  margin: auto;
+}
+
+.pokemonlst {
+  border: 1px solid forestgreen;
+  border-collapse: collapse;
+  border-spacing: 1;
+  width: 900px;
+  height: 200px;
+}
+  
+.evolution {
+  border: 1px solid forestgreen;
+  width: 300px;
+  height: 100px;
+}
+
+table {
+  border: 2px solid forestgreen;
+  width: 800px;
+  height: 100px;
+  border-spacing: 0;
+}
+
+th {
+  border-bottom: 1px solid black;
+  height: 40px;
+  background-color:aliceblue;
+  
+}

@@ -1,0 +1,38 @@
+Scenario :-
+
+The contents of a remote data source are required to be displayed in a user friendly, interactive, and visually appealing manner.
+
+We are interested in your approach to the solution and the design decisions that you make.
+
+As a reference, the solution will probably take a few hours to implement.
+ 
+
+Requirements :-
+
+Design and code a React.js application to display the remote data in a tabular format, using any additional libraries you want to leverage.
+
+Each record in the table needs to contain the ‘num’, ‘name’ and ‘type’ properties.
+
+Each record in the table needs to display the associated image.
+
+The table data is to be ordered alphabetically on the ‘name’ property, in ascending order.
+
+When a user clicks on a table row, the application needs to provide them with additional information on the selected entry, e.g. the previous and next evolutions.
+ 
+
+Optional Extras :-
+
+Additional table functionality, e.g. search, ordering of columns
+
+Anything else you’d like to include that would be of benefit
+ 
+
+Resources:-
+
+Remote data source location: https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json
+
+ 
+
+Return :-
+
+Solutions should be returned via a link to a version available on the Web, e.g. GitHub, Dropbox, etc. (attachments are unlikely to get through the firewall).
