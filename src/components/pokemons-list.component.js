@@ -5,8 +5,7 @@ import Pagination from './pagination.component';
 
 
 export default class PokemonList extends Component {
-  //const PokemonList = () => {
-  constructor(props) {
+    constructor(props) {
     super(props);    
     this.retrieveData = this.retrieveData.bind(this);
     this.sortList = this.sortList.bind(this);
@@ -109,11 +108,7 @@ export default class PokemonList extends Component {
   
   render() {
     const { searchName, filterPokemons } = this.state;  
-    let evolutionsClose=()=>this.setState({visible: false}); 
-    // const [pagination,setPagination] =useState({
-    //   start:0,
-    //   end:5
-    // });   
+    let evolutionsClose=()=>this.setState({visible: false});
     return (
       <div >
             <div className="row col-md-12">
@@ -148,15 +143,13 @@ export default class PokemonList extends Component {
                         let types="";
                         for(let i=0;i<val.type.length;i++)
                         {types=i===0?val.type[i]:types+", " +val.type[i]}
-                      return (
-                    
+                      return (                    
                       <tr key={key}  onClick={e=> this.handleRowClick(e,val.num)}> 
                           <td className="col-md-2">{val.num}</td>
                           <td className="col-md-3">{val.name}</td>                       
                           <td className="col-md-3">{types}</td>                         
                           <td className="col-md-4"><img src={val.img} alt="" /> </td>                         
-                      </tr> 
-                                                                  
+                      </tr>                                       
                     )          
                   })}
                   </tbody>    
@@ -168,9 +161,7 @@ export default class PokemonList extends Component {
                     </tr>                  
                   </tfoot>                     
                 </table>               
-            </div>
-            {/* <div><Pagination/>
-            </div>  */}
+            </div>            
             <Evolutions
                     show={this.state.visible}
                     onHide={evolutionsClose}
@@ -178,9 +169,8 @@ export default class PokemonList extends Component {
                     selectedPrevEvolution={this.state.selectedPrevEvolution}
                     selectedName={this.state.selectedName}
                     isEvolutionFound={this.state.isEvolutionFound}>                
-              </Evolutions> 
-      </div>
-        
+            </Evolutions> 
+      </div>        
     );
   }
 }
