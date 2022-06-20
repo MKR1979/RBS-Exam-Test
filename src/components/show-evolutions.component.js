@@ -6,7 +6,7 @@ export default class Evolutions extends Component {
   
   render() {
     let prevEvolutions=""; let nextEvolutions=""; let evolutionHeader="";
-    if(this.props.selectedPrevEvolution.length>0)
+    if(this.props.selectedprevevolution.length>0)
     {
           prevEvolutions=<div className="form-container" >
           <label> Previous evolutions</label>         
@@ -15,7 +15,7 @@ export default class Evolutions extends Component {
                 <th className="col-md-1">Num</th>
                 <th className="col-md-1">Name</th>          
               </tr>               
-              {this.props.selectedPrevEvolution.map((val, key) => {          
+              {this.props.selectedprevevolution.map((val, key) => {          
                 return (
                   <tr key={key}  onClick={e=> this.handleRowClick(e,val.num)} styles={{ marginTop: 1 }}> 
                     <td className="col-md-1">{val.num}</td>
@@ -26,7 +26,7 @@ export default class Evolutions extends Component {
             </table>    
       </div>
     }
-    if(this.props.selectedNextEvolution.length>0)
+    if(this.props.selectednextevolution.length>0)
     {
       nextEvolutions= <div className="form-group">
               <label htmlFor="title">Next evolutions</label>
@@ -35,7 +35,7 @@ export default class Evolutions extends Component {
                 <th className="col-md-1">Num</th>
                 <th className="col-md-1">Name</th>          
               </tr>               
-              {this.props.selectedNextEvolution.map((val, key) => {          
+              {this.props.selectednextevolution.map((val, key) => {          
                 return (
                   <tr key={key}  onClick={e=> this.handleRowClick(e,val.num)} styles={{ marginTop: 1 }}> 
                     <td className="col-md-1">{val.num}</td>
@@ -46,7 +46,7 @@ export default class Evolutions extends Component {
             </table>    
       </div>      
     }
-    evolutionHeader=this.props.isEvolutionFound===false? "There is no evolution for "+this.props.selectedName: "Evolutions for "+this.props.selectedName;
+    evolutionHeader=this.props.isevolutionfound==="n"? "There is no evolution for "+this.props.selectedname: "Evolutions for "+this.props.selectedName;
     return (<div>
       <Modal
       {...this.props}

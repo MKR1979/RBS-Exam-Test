@@ -18,12 +18,12 @@ export default class PokemonList extends Component {
       filterPokemons: [],
       searchName: "",
       visible:false,
-      selectedNextEvolution:[],
-      selectedPrevEvolution:[],
-      selectedName:"",
       directionNum:"",
       directionName:"",
-      isEvolutionFound:false
+      isevolutionfound:"n",
+      selectednextevolution:[],
+      selectedprevevolution:[],
+      selectedname:"",
     };
   }
 
@@ -93,16 +93,16 @@ export default class PokemonList extends Component {
 
   handleRowClick = (e,num) => {
     let selectedEvolution=this.state.pokemons.filter((item) => item.num === num);
-    let selectedNextEvolution=selectedEvolution[0].next_evolution===undefined?[]:selectedEvolution[0].next_evolution;
-    let selectedPrevEvolution=selectedEvolution[0].prev_evolution===undefined?[]:selectedEvolution[0].prev_evolution;
-    let selectedName=selectedEvolution[0].name; 
-    let isEvolutionFound=selectedNextEvolution.length>0||selectedPrevEvolution.length>0?true:false;    
+    let selectednextevolution=selectedEvolution[0].next_evolution===undefined?[]:selectedEvolution[0].next_evolution;
+    let selectedprevevolution=selectedEvolution[0].prev_evolution===undefined?[]:selectedEvolution[0].prev_evolution;
+    let selectedname=selectedEvolution[0].name; 
+    let isevolutionfound=selectednextevolution.length>0||selectedprevevolution.length>0?"y":"n";    
     this.setState({ 
       visible: true,
-      selectedName:selectedName,
-      selectedNextEvolution:selectedNextEvolution,
-      selectedPrevEvolution:selectedPrevEvolution,
-      isEvolutionFound:isEvolutionFound
+      selectedname:selectedname,
+      selectednextevolution:selectednextevolution,
+      selectedprevevolution:selectedprevevolution,
+      isEvolutionFound:isevolutionfound
     });         
   }; 
   
@@ -155,7 +155,7 @@ export default class PokemonList extends Component {
                   </tbody>    
                   <tfoot>
                     <tr>
-                      <td colspan="4">
+                      <td colSpan="4">
                       <Pagination/> 
                       </td>
                     </tr>                  
@@ -165,10 +165,10 @@ export default class PokemonList extends Component {
             <Evolutions
                     show={this.state.visible}
                     onHide={evolutionsClose}
-                    selectedNextEvolution={this.state.selectedNextEvolution}
-                    selectedPrevEvolution={this.state.selectedPrevEvolution}
-                    selectedName={this.state.selectedName}
-                    isEvolutionFound={this.state.isEvolutionFound}>                
+                    selectednextevolution={this.state.selectednextevolution}
+                    selectedprevevolution={this.state.selectedprevevolution}
+                    selectedname={this.state.selectedname}
+                    isevolutionfound={this.state.isevolutionfound}>                
             </Evolutions> 
       </div>        
     );
