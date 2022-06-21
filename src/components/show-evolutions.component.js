@@ -10,11 +10,14 @@ export default class Evolutions extends Component {
     {
           prevEvolutions=<div className="form-container" >
           <label> Previous evolutions</label>         
-          <table className="evolution">              
+          <table className="evolution">
+            <thead>            
               <tr>
                 <th className="col-md-1">Num</th>
                 <th className="col-md-1">Name</th>          
-              </tr>               
+              </tr>  
+              </thead>  
+              <tbody>            
               {this.props.selectedprevevolution.map((val, key) => {          
                 return (
                   <tr key={key}  onClick={e=> this.handleRowClick(e,val.num)} styles={{ marginTop: 1 }}> 
@@ -23,6 +26,7 @@ export default class Evolutions extends Component {
                   </tr>           
                 )          
               })}
+              </tbody> 
             </table>    
       </div>
     }
@@ -30,19 +34,23 @@ export default class Evolutions extends Component {
     {
       nextEvolutions= <div className="form-group">
               <label htmlFor="title">Next evolutions</label>
-              <table className="evolution">              
+              <table className="evolution"> 
+              <thead>           
               <tr>
                 <th className="col-md-1">Num</th>
                 <th className="col-md-1">Name</th>          
-              </tr>               
+              </tr>  
+              </thead>
+              <tbody>           
               {this.props.selectednextevolution.map((val, key) => {          
                 return (
                   <tr key={key}  onClick={e=> this.handleRowClick(e,val.num)} styles={{ marginTop: 1 }}> 
                     <td className="col-md-1">{val.num}</td>
                     <td className="col-md-1">{val.name}</td>              
-                  </tr>           
+                  </tr>                             
                 )          
               })}
+              </tbody>    
             </table>    
       </div>      
     }
